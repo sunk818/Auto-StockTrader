@@ -1,0 +1,208 @@
+{
+  "id": "3754741b-c246-46fd-a4b9-61df42906362",
+  "version": "2.0",
+  "name": "Sofi Helper",
+  "url": "https://www.sofi.com/wealth/",
+  "tests": [{
+    "id": "00fe9fca-2260-4ca5-beee-945eb08cc90k",
+    "name": "Sofi",
+    "commands": [{
+      "id": "431f11b5-635e-458b-8360-9531d5f5dbe5",
+      "comment": "",
+      "command": "store",
+      "target": "ARVL",
+      "targets": [],
+      "value": "TICKER"
+    }, {
+      "id": "b6ca055f-d2c7-4f83-a187-43da6ecaa44e",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ['YOUR_ACCOUNTS','HERE'];",
+      "targets": [],
+      "value": "accounts"
+    }, {
+      "id": "4956efa5-c445-44f1-9771-90e6c188c228",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"UR_ACCT_HERE\";",
+      "targets": [],
+      "value": "target"
+    }, {
+      "id": "bd5bd04d-d462-4410-ab73-b95013e7b1b8",
+      "comment": "",
+      "command": "store",
+      "target": "0.13",
+      "targets": [],
+      "value": "LIMIT"
+    }, {
+      "id": "7918963f-8a4d-4d44-bd16-9f6b38a6e7d2",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"Buy\"; ",
+      "targets": [],
+      "value": "TYPE"
+    }, {
+      "id": "c5dda49f-8168-4957-a5e4-f3be2a10ea2f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "let list = ${accounts}; list = list.slice(list.indexOf(${target}) + 1); return list;",
+      "targets": [],
+      "value": "numb"
+    }, {
+      "id": "260a9e1a-a82b-4d45-98dc-b9ca0fcf4860",
+      "comment": "",
+      "command": "forEach",
+      "target": "numb",
+      "targets": [],
+      "value": "account"
+    }, {
+      "id": "6e8d053a-4fc4-4fdb-a70b-153dc04752be",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.sofi.com/wealth/app/account/${account}/stock/${TICKER}/${TYPE}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f464bd97-5ca1-4278-9e3c-0aaa296bde79",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-4",
+      "targets": [
+        ["id=input-4", "id"],
+        ["name=shares", "name"],
+        ["css=#input-4", "css:finder"],
+        ["xpath=//input[@id='input-4']", "xpath:attributes"],
+        ["xpath=//div[@id='input-wrapper-5']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7410051f-d7d2-408c-9b08-2b18789573e2",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-4",
+      "targets": [
+        ["id=input-4", "id"],
+        ["name=shares", "name"],
+        ["css=#input-4", "css:finder"],
+        ["xpath=//input[@id='input-4']", "xpath:attributes"],
+        ["xpath=//div[@id='input-wrapper-5']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${LIMIT}"
+    }, {
+      "id": "521619f8-7941-4889-b3e4-be56306e2ac9",
+      "comment": "",
+      "command": "click",
+      "target": "id=input-1",
+      "targets": [
+        ["id=input-1", "id"],
+        ["name=value", "name"],
+        ["css=#input-1", "css:finder"],
+        ["xpath=//input[@id='input-1']", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div[4]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "67a46219-b580-4986-84a2-ccadf12bdbd4",
+      "comment": "",
+      "command": "type",
+      "target": "id=input-1",
+      "targets": [],
+      "value": "1"
+    }, {
+      "id": "6bab2c58-7aa2-44ae-b6a9-954d2e4c121a",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Review')]",
+      "targets": [
+        ["css=.sc-hmjpVf", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div[6]/button", "xpath:idRelative"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Review')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aeb20f7d-b271-48dd-ac68-68e8642b9315",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Buy ${TICKER}')]",
+      "targets": [
+        ["css=.sc-hmjpVf", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//main[@id='mainContent']/div/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buy TRKA')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0be328ba-62fb-4aa1-a491-e47dedb5f783",
+      "comment": "",
+      "command": "executeScript",
+      "target": "const helper2 = document.getElementById(\"helper-2\"); if (helper2 && helper2.textContent.trim() === \"Choose your account\") {   return true; }  const wizardContainer = document.querySelector(\".WizardContainer-esGHbX\"); if (wizardContainer && wizardContainer.querySelector(\"h1\").textContent.includes(\"Review\")) {   return true; }",
+      "targets": [],
+      "value": "result"
+    }, {
+      "id": "5dd5e797-3f53-4770-bca7-6c9a545683e0",
+      "comment": "",
+      "command": "while",
+      "target": "${result} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "880ba778-0fdd-4a33-997d-198df963c4f4",
+      "comment": "",
+      "command": "echo",
+      "target": "${account} order has not been placed. Pausing for extra time.",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f45bc24e-268a-4a2c-bede-c2535a5d740e",
+      "comment": "",
+      "command": "pause",
+      "target": "2500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41616688-a5f4-4d75-97a8-a6d5f9de1765",
+      "comment": "",
+      "command": "executeScript",
+      "target": "const helper2 = document.getElementById(\"helper-2\"); if (helper2 && helper2.textContent.trim() === \"Choose your account\") {   return true; }  const wizardContainer = document.querySelector(\".WizardContainer-esGHbX\"); if (wizardContainer && wizardContainer.querySelector(\"h1\").textContent.includes(\"Review\")) {   return true; }",
+      "targets": [],
+      "value": "result"
+    }, {
+      "id": "407d2451-b83b-4feb-b5ea-f4d0ddc39f68",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "886b65cc-c82c-4e20-8325-e26183aafe30",
+      "comment": "",
+      "command": "echo",
+      "target": "${account} Buying/Selling ${TICKER} Helper Session Passed!",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3e5927c-02b5-42e6-a8eb-e080169a914c",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5c03e64a-0f9b-422a-b416-65be8986bacd",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.sofi.com/wealth/"],
+  "plugins": []
+}

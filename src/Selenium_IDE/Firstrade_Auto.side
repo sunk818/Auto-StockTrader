@@ -14,6 +14,13 @@
       "targets": [],
       "value": "TICKER"
     }, {
+      "id": "a9efebcd-6b04-46fe-8622-0ecb5642d9bd",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${TICKER}.split(\",\");",
+      "targets": [],
+      "value": "TICKERS"
+    }, {
       "id": "e3d9e076-85a1-429e-9c89-977c05592d26",
       "comment": "",
       "command": "executeScript",
@@ -24,7 +31,7 @@
       "id": "0c21e4cd-cee0-4c9a-902d-711bd51ff73f",
       "comment": "",
       "command": "executeScript",
-      "target": "return \"LAST_SUCCESSFUL_ACCOUNT_HERE\"",
+      "target": "return \"LAST_SUCCESSFUL_ACCOUNT_HERE\".trim();",
       "targets": [],
       "value": "target"
     }, {
@@ -49,7 +56,7 @@
       "targets": [],
       "value": "LIMIT_PRICE"
     }, {
-      "id": "3ae8e293-1951-4fd4-b8a4-cf544b316a66",
+      "id": "26c7e8ca-3189-43e2-8746-9112dfd983dc",
       "comment": "",
       "command": "forEach",
       "target": "list",
@@ -76,6 +83,13 @@
       "target": "id=accountId1",
       "targets": [],
       "value": "label=${account}"
+    }, {
+      "id": "3ae8e293-1951-4fd4-b8a4-cf544b316a66",
+      "comment": "",
+      "command": "forEach",
+      "target": "TICKERS",
+      "targets": [],
+      "value": "TICK"
     }, {
       "id": "43fefee1-9afb-4306-8432-151c9ec959b0",
       "comment": "",
@@ -145,7 +159,7 @@
       "command": "sendKeys",
       "target": "id=symbol1",
       "targets": [],
-      "value": "${TICKER}"
+      "value": "${TICK}"
     }, {
       "id": "11e94034-27a2-4279-89f4-6380a0353ab8",
       "comment": "",
@@ -214,7 +228,14 @@
       "id": "f935c532-19df-4c6d-b272-80aa592cd716",
       "comment": "",
       "command": "echo",
-      "target": "${account} bought ${TICKER}",
+      "target": "${account} bought ${TICK}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e820fde7-5e7a-4a5b-91e5-161a47ca455a",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -236,6 +257,13 @@
       "targets": [],
       "value": "TICKER"
     }, {
+      "id": "c962cffb-a5b7-4ed7-be34-866dd0101d3c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${TICKER}.split(\",\");",
+      "targets": [],
+      "value": "TICKERS"
+    }, {
       "id": "fb05d9fc-0aa5-402d-b194-965639ebbf4d",
       "comment": "",
       "command": "executeScript",
@@ -246,7 +274,7 @@
       "id": "e2e95a20-d305-49d8-a243-44c1465daa0c",
       "comment": "",
       "command": "executeScript",
-      "target": "return \"LAST_SUCCESSFUL_ACCOUNT_HERE\"",
+      "target": "return \"LAST_SUCCESSFUL_ACCOUNT_HERE\".trim();",
       "targets": [],
       "value": "target"
     }, {
@@ -298,6 +326,13 @@
       "target": "id=accountId1",
       "targets": [],
       "value": "label=${account}"
+    }, {
+      "id": "47340326-7154-4297-9d3b-2f7982995398",
+      "comment": "",
+      "command": "forEach",
+      "target": "TICKERS",
+      "targets": [],
+      "value": "TICK"
     }, {
       "id": "82772a8c-cdcb-429e-b31a-6c51bebe3a8b",
       "comment": "",
@@ -366,7 +401,7 @@
       "command": "sendKeys",
       "target": "id=symbol1",
       "targets": [],
-      "value": "${TICKER}"
+      "value": "${TICK}"
     }, {
       "id": "48240df5-1a51-4c57-bba1-c05034762ad4",
       "comment": "",
@@ -435,11 +470,140 @@
       "id": "6e05b1af-2bba-4e80-803a-d798b472ed64",
       "comment": "",
       "command": "echo",
-      "target": "${account} bought ${TICKER}",
+      "target": "${account} sold ${TICK}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a58485e-a776-4058-845f-301a054b9e11",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
       "id": "ce6c5a73-42ed-47d6-a6ee-80477080972e",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "24b2fe7d-03f7-4b18-b846-77fae0f90f87",
+    "name": "0-Firstrade_Login",
+    "commands": [{
+      "id": "550a267d-aa4e-423f-b611-90458a1759ac",
+      "comment": "",
+      "command": "open",
+      "target": "https://invest.firstrade.com/cgi-bin/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3835fe1f-7ddc-473b-a3a4-55361aa6f6f3",
+      "comment": "",
+      "command": "store",
+      "target": "LOGIN:HERE",
+      "targets": [],
+      "value": "FIRSTRADE_LOGIN"
+    }, {
+      "id": "360f7e65-2aba-4ad8-9736-ad54f21795e8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${FIRSTRADE_LOGIN}.split(\":\");",
+      "targets": [],
+      "value": "LOGIN"
+    }, {
+      "id": "836d2a91-161b-459a-bebb-3f6390bbf6b4",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${FIRSTRADE_LOGIN} != \"LOGIN:HERE\";",
+      "targets": [],
+      "value": "use_login"
+    }, {
+      "id": "6db7699f-73a5-47c0-8192-466dfa2f796f",
+      "comment": "",
+      "command": "if",
+      "target": "${use_login}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "acc7743d-174c-48a7-aa06-f12decd6ef30",
+      "comment": "",
+      "command": "echo",
+      "target": "It is not reccomended to use this method to automate a login. Proceed at your own risk.",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90786ca9-c88b-4cda-aa8d-3f03163fe619",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='loginForm']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea050150-059c-4dbb-96b5-b2dad6f61ca6",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='loginForm']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "${LOGIN[0]}"
+    }, {
+      "id": "3b3eb9f5-f00d-42f3-a636-7980060a9ca3",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='loginForm']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1842a5a3-8d1b-4439-b33e-cc1e253ae3c7",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='loginForm']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "${LOGIN[1]}"
+    }, {
+      "id": "c7d0648e-6400-4489-b02f-b2f5d145672e",
+      "comment": "",
+      "command": "click",
+      "target": "id=loginButton",
+      "targets": [
+        ["id=loginButton", "id"],
+        ["css=#loginButton", "css:finder"],
+        ["xpath=//input[@id='loginButton']", "xpath:attributes"],
+        ["xpath=//form[@id='loginForm']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3657f82-8f80-4a86-84a9-947474233276",
       "comment": "",
       "command": "end",
       "target": "",

@@ -5,7 +5,7 @@
   "url": "https://personal1.vanguard.com/twe-trade-web-equity-etf/trade",
   "tests": [{
     "id": "1c92f668-6e66-48b0-b082-bdf45cc007c2",
-    "name": "X_Vanguard_Buy",
+    "name": "X Archived Vanguard Buy",
     "commands": [{
       "id": "5d537d93-9d32-40d6-be14-73ca41d646c3",
       "comment": "",
@@ -13,6 +13,13 @@
       "target": "TICKERHERE",
       "targets": [],
       "value": "TICKER"
+    }, {
+      "id": "0a9d7171-c708-45f0-a8e0-2ad2930c06b1",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${TICKER}.split(\",\");",
+      "targets": [],
+      "value": "TICKERS"
     }, {
       "id": "93a6719a-b584-461a-828e-bebfddb7c7fc",
       "comment": "",
@@ -35,13 +42,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "086b7bf2-ee4b-4a8c-8fdc-3b93100ae099",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "876x820",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "43cef369-ab0e-46e1-a20c-ea2ca342f143",
       "comment": "",
       "command": "executeScript",
@@ -55,6 +55,13 @@
       "target": "list",
       "targets": [],
       "value": "account"
+    }, {
+      "id": "87cc6003-75a5-4137-b9e9-001321cd0c31",
+      "comment": "",
+      "command": "forEach",
+      "target": "TICKERS",
+      "targets": [],
+      "value": "TICK"
     }, {
       "id": "4203529a-5895-4066-878e-e3af32ce5890",
       "comment": "",
@@ -113,7 +120,7 @@
         ["xpath=//input[@id='symbol']", "xpath:attributes"],
         ["xpath=//div[3]/div/tds-text-input/div/div/input", "xpath:position"]
       ],
-      "value": "${TICKER}"
+      "value": "${TICK}"
     }, {
       "id": "7eb1aceb-c091-4845-aaf4-f62363042916",
       "comment": "",
@@ -259,6 +266,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "b390876f-200f-4e68-929e-984c8e7668b9",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "d7d80404-0250-4492-a1e6-7e6b98b69bec",
       "comment": "",
       "command": "end",
@@ -268,7 +282,7 @@
     }]
   }, {
     "id": "dfe19316-5695-4ba8-a2af-ee7dde2236a8",
-    "name": "X_Vanguard_Sell",
+    "name": "X Archived Vanguard Sell",
     "commands": [{
       "id": "73bed0a3-7e10-4d9f-8613-6389606896db",
       "comment": "",
@@ -276,6 +290,13 @@
       "target": "TICKERHERE",
       "targets": [],
       "value": "TICKER"
+    }, {
+      "id": "6bbd3f55-9133-4d99-a7ec-2ea670049d66",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${TICKER}.split(\",\");",
+      "targets": [],
+      "value": "TICKERS"
     }, {
       "id": "fc6bd7f5-3d49-48b9-86e5-cc23f29e1687",
       "comment": "",
@@ -298,13 +319,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "16166601-0f81-406e-8fd7-5166d956d1d6",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "876x820",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "a38ce32b-6bf2-4801-b638-a4558db48f31",
       "comment": "",
       "command": "executeScript",
@@ -318,6 +332,13 @@
       "target": "list",
       "targets": [],
       "value": "account"
+    }, {
+      "id": "ae7952cc-d95a-46b2-9bab-7f7a4b4648a9",
+      "comment": "",
+      "command": "forEach",
+      "target": "TICKERS",
+      "targets": [],
+      "value": "TICK"
     }, {
       "id": "1bcad541-ae6d-4305-85bf-2d1a814ba722",
       "comment": "",
@@ -376,7 +397,7 @@
         ["xpath=//input[@id='symbol']", "xpath:attributes"],
         ["xpath=//div[3]/div/tds-text-input/div/div/input", "xpath:position"]
       ],
-      "value": "${TICKER}"
+      "value": "${TICK}"
     }, {
       "id": "61c0feac-9ad6-4046-afc3-eea8b6a9d884",
       "comment": "",
@@ -522,6 +543,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "c37d3c98-a4e6-401a-ad35-f14e0208bff8",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "11b43d46-2cf4-4f4c-a12d-bab46d776d8c",
       "comment": "",
       "command": "end",
@@ -531,7 +559,7 @@
     }]
   }, {
     "id": "170b3536-4002-495a-901b-76046b2ae305",
-    "name": "Buy_Vanguard",
+    "name": "Buy Vanguard",
     "commands": [{
       "id": "6d2cd864-1b84-40a3-9a76-6195d4222dd3",
       "comment": "",
@@ -540,17 +568,24 @@
       "targets": [],
       "value": "TICKER"
     }, {
+      "id": "0a1eb697-4ed3-4375-b2a0-d6e705d9d22d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${TICKER}.split(\",\");",
+      "targets": [],
+      "value": "TICKERS"
+    }, {
       "id": "2c57ae98-c312-45c3-812f-1c42dd3f6c82",
       "comment": "",
       "command": "executeScript",
-      "target": "return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]",
+      "target": "return Array.from({length: 50}, (_, i) => i + 1);",
       "targets": [],
       "value": "numAccounts"
     }, {
       "id": "97461af7-5218-4ea8-9308-386f2426f9b5",
       "comment": "",
       "command": "executeScript",
-      "target": "return \"SPLICE-HERE\";",
+      "target": "return -1;",
       "targets": [],
       "value": "target"
     }, {
@@ -558,13 +593,6 @@
       "comment": "",
       "command": "open",
       "target": "https://personal.vanguard.com/us/TradeTicket?investmentType=EQUITY",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "87f130b4-9df2-4149-9f08-00988ec2bf27",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "876x820",
       "targets": [],
       "value": ""
     }, {
@@ -581,6 +609,13 @@
       "target": "list",
       "targets": [],
       "value": "account"
+    }, {
+      "id": "e51a1ce7-69bf-4253-9b33-78282ced3ea8",
+      "comment": "",
+      "command": "forEach",
+      "target": "TICKERS",
+      "targets": [],
+      "value": "TICK"
     }, {
       "id": "70d62899-7d5e-4162-8fa9-f6e46e06c8c0",
       "comment": "",
@@ -625,6 +660,13 @@
         ["xpath=//table[@id='baseForm:accountSelectOne-border']/tbody/tr/td[2]", "xpath:idRelative"],
         ["xpath=//a/table/tbody/tr/td[2]", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "c7bad4a4-aaf7-456b-bc7c-dc1bd01c4183",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=baseForm:accountSelectOne:${account}",
+      "targets": [],
       "value": ""
     }, {
       "id": "43085b6e-a689-4350-914f-22c7ef9abccf",
@@ -691,7 +733,7 @@
       "command": "sendKeys",
       "target": "id=baseForm:investmentTextField",
       "targets": [],
-      "value": "${TICKER}"
+      "value": "${TICK}"
     }, {
       "id": "6a43da2d-3c26-4db9-97e1-d67fa5c525b6",
       "comment": "",
@@ -837,6 +879,34 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "a0ede039-352d-4eff-8f25-0726058619c5",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//INPUT[@id='orderCaptureWarningLayerForm:yesButtonInput']",
+      "targets": [],
+      "value": "orderCaptureWarning"
+    }, {
+      "id": "5805998e-0b87-4aef-9c94-ecdc15fc59ac",
+      "comment": "",
+      "command": "if",
+      "target": "${orderCaptureWarning}==1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2fd31c97-e457-4c65-a3f6-1c33a50a5397",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//INPUT[@id='orderCaptureWarningLayerForm:yesButtonInput']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c89eb4fc-bf53-45e1-9137-fb707fcca38a",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "a1f78b77-ec4b-456e-b8c1-64e75758a5d8",
       "comment": "",
       "command": "click",
@@ -878,6 +948,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "e3b6bb20-2760-4ebd-8877-542aba54c107",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "055bf9c3-a8cf-4abc-a8f9-fbd4e488d02f",
       "comment": "",
       "command": "end",
@@ -887,7 +964,7 @@
     }]
   }, {
     "id": "5d285f40-efe8-4198-b0da-221c7a37f7d3",
-    "name": "Sell_Vanguard",
+    "name": "Sell Vanguard",
     "commands": [{
       "id": "e678bb18-9674-41d7-8af0-005de2d1e537",
       "comment": "",
@@ -896,17 +973,24 @@
       "targets": [],
       "value": "TICKER"
     }, {
+      "id": "cf63991b-a469-419e-adc4-8a8bbda4d6c3",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${TICKER}.split(\",\");",
+      "targets": [],
+      "value": "TICKERS"
+    }, {
       "id": "397e51c1-398c-4d26-a102-7dd6c7ac4d82",
       "comment": "",
       "command": "executeScript",
-      "target": "return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]",
+      "target": "return Array.from({length: 50}, (_, i) => i + 1);",
       "targets": [],
       "value": "numAccounts"
     }, {
       "id": "a9addb2b-d88c-4f6e-89f9-fdf551c52380",
       "comment": "",
       "command": "executeScript",
-      "target": "return \"SPLICE-HERE\";",
+      "target": "return -1;",
       "targets": [],
       "value": "target"
     }, {
@@ -914,13 +998,6 @@
       "comment": "",
       "command": "open",
       "target": "https://personal.vanguard.com/us/TradeTicket?investmentType=EQUITY",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "f7f11c25-ac8b-46cb-925c-f2f2a4739815",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "876x820",
       "targets": [],
       "value": ""
     }, {
@@ -937,6 +1014,13 @@
       "target": "list",
       "targets": [],
       "value": "account"
+    }, {
+      "id": "11b8a8f3-f272-461f-83e3-8a038c257d29",
+      "comment": "",
+      "command": "forEach",
+      "target": "TICKERS",
+      "targets": [],
+      "value": "TICK"
     }, {
       "id": "fa45bae4-436f-4a1d-bf90-d53af008a9f2",
       "comment": "",
@@ -981,6 +1065,13 @@
         ["xpath=//table[@id='baseForm:accountSelectOne-border']/tbody/tr/td[2]", "xpath:idRelative"],
         ["xpath=//a/table/tbody/tr/td[2]", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "7fcfa4db-d978-4d7f-8b8b-af59d24ecbda",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=baseForm:accountSelectOne:${account}",
+      "targets": [],
       "value": ""
     }, {
       "id": "812622fb-2992-49ee-9640-1be29a5d1334",
@@ -1047,7 +1138,7 @@
       "command": "sendKeys",
       "target": "id=baseForm:investmentTextField",
       "targets": [],
-      "value": "${TICKER}"
+      "value": "${TICK}"
     }, {
       "id": "96c786c5-cae0-43f8-a8c7-66a0f5cd6b7a",
       "comment": "",
@@ -1132,6 +1223,27 @@
       ],
       "value": ""
     }, {
+      "id": "099b1425-37ce-4b6f-beb9-45d4658c7ff2",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//*[@id=\"baseForm:costBasisMethodSelectOne_main\"]",
+      "targets": [],
+      "value": "costBasis"
+    }, {
+      "id": "4a7debb2-cf69-4cda-a92d-3aa9185cd024",
+      "comment": "",
+      "command": "if",
+      "target": "${costBasis} == 1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "476a5825-0737-45f5-9a85-d6fa602890eb",
+      "comment": "",
+      "command": "echo",
+      "target": "costBasisMethod exists",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "c5516590-d68a-4ab8-a2a8-509cf06858a4",
       "comment": "",
       "command": "click",
@@ -1166,8 +1278,15 @@
         ["css=#baseForm\\3A costBasisMethodTable tr:nth-child(2) > .noTopBorder:nth-child(2)", "css:finder"],
         ["xpath=//table[@id='baseForm:costBasisMethodTable']/tbody/tr[2]/td[2]", "xpath:idRelative"],
         ["xpath=//span[9]/div/span/table/tbody/tr[2]/td[2]", "xpath:position"],
-        ["xpath=//td[contains(.,'Cost basis reporting methodsÂ Â ')]", "xpath:innerText"]
+        ["xpath=//td[contains(.,'Cost basis reporting methods ')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "a78cb037-abed-4f89-b554-daf93e63453d",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
       "id": "6986a7a3-5362-4a23-a745-0f915401e4bc",
@@ -1227,6 +1346,54 @@
       "id": "a7f5daf0-1134-4427-b2b3-f7fa6b2ee441",
       "comment": "",
       "command": "else",
+            "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86a2e842-b651-4ab0-ba34-9f978ccdc737",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//SPAN[@title='28801']",
+      "targets": [],
+      "value": "market-closed"
+    }, {
+      "id": "cdbc82f4-bb54-4db7-9be6-f5b5dc353b4b",
+      "comment": "",
+      "command": "if",
+      "target": "${market-closed} == true",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ac7f715-e5ff-4988-b65a-4eaa700a57e6",
+      "comment": "",
+      "command": "echo",
+      "target": "market closed warning",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "74911e5a-0867-4f1a-8d8a-263826677414",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b853b8a-1ff6-4f7d-91e7-d2cfba26cfa8",
+      "comment": "",
+      "command": "click",
+      "target": "id=orderCaptureWarningLayerForm:yesButtonInput",
+      "targets": [
+        ["id=orderCaptureWarningLayerForm:yesButtonInput", "id"],
+        ["css=#orderCaptureWarningLayerForm\\3AyesButtonInput", "css:finder"],
+        ["xpath=//input[@id='orderCaptureWarningLayerForm:yesButtonInput']", "xpath:attributes"],
+        ["xpath=//span[@id='orderCaptureWarningLayerForm:yesButton']/div/span/div/input", "xpath:idRelative"],
+        ["xpath=//td[2]/span/span/span/div/span/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cceee2a2-0f4c-4c73-b33a-8fd267a67673",
+      "comment": "",
+      "command": "end",
       "target": "",
       "targets": [],
       "value": ""
@@ -1272,7 +1439,148 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "bdc227ab-151c-4019-b2a6-788e8966b1c8",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "739b4bd6-ff3c-4685-8f60-329ed5ef22ce",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "fc14f86b-7526-4124-b1c1-776cf0b13d0f",
+    "name": "0 Vanguard Login",
+    "commands": [{
+      "id": "95ae2867-85b3-4569-978e-a3214ccf56ef",
+      "comment": "",
+      "command": "open",
+      "target": "https://holdings.web.vanguard.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca2cf219-8d97-4990-a975-74bad45e7c97",
+      "comment": "",
+      "command": "store",
+      "target": "LOGIN:HERE",
+      "targets": [],
+      "value": "VANGUARD_LOGIN"
+    }, {
+      "id": "f38bd345-75b8-49d8-97ed-97d9904b8b47",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${VANGUARD_LOGIN}.split(\":\");",
+      "targets": [],
+      "value": "LOGIN"
+    }, {
+      "id": "c7374ff3-b38c-4e38-b54b-b05c4a08030a",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${VANGUARD_LOGIN} != \"LOGIN:HERE\";",
+      "targets": [],
+      "value": "use_login"
+    }, {
+      "id": "6b0a4de6-b632-487f-96d3-3adc53d4eb75",
+      "comment": "",
+      "command": "if",
+      "target": "${use_login}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "71ef1e0f-cb53-4886-b398-3576e54e0bc2",
+      "comment": "",
+      "command": "click",
+      "target": "id=USER",
+      "targets": [
+        ["id=USER", "id"],
+        ["name=USER", "name"],
+        ["css=#USER", "css:finder"],
+        ["xpath=//input[@id='USER']", "xpath:attributes"],
+        ["xpath=//form[@id='username-password-form']/div[2]/div/c11n-input/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebcae294-059d-4d07-9cb0-846005c64095",
+      "comment": "",
+      "command": "type",
+      "target": "id=USER",
+      "targets": [
+        ["id=USER", "id"],
+        ["name=USER", "name"],
+        ["css=#USER", "css:finder"],
+        ["xpath=//input[@id='USER']", "xpath:attributes"],
+        ["xpath=//form[@id='username-password-form']/div[2]/div/c11n-input/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${LOGIN[0]}"
+    }, {
+      "id": "ad143007-8014-4124-9818-b439e08d0761",
+      "comment": "",
+      "command": "click",
+      "target": "id=PASSWORD-blocked",
+      "targets": [
+        ["id=PASSWORD-blocked", "id"],
+        ["css=#PASSWORD-blocked", "css:finder"],
+        ["xpath=//input[@id='PASSWORD-blocked']", "xpath:attributes"],
+        ["xpath=//lgn-password-input[@id='PASSWORD']/c11n-input/input", "xpath:idRelative"],
+        ["xpath=//lgn-password-input/c11n-input/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8833593e-1f78-4458-bce2-88aa4751785c",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "225680e5-490c-4f3b-bd69-1642a62825dd",
+      "comment": "",
+      "command": "type",
+      "target": "id=PASSWORD-blocked",
+      "targets": [
+        ["id=PASSWORD-blocked", "id"],
+        ["css=#PASSWORD-blocked", "css:finder"],
+        ["xpath=//input[@id='PASSWORD-blocked']", "xpath:attributes"],
+        ["xpath=//lgn-password-input[@id='PASSWORD']/c11n-input/input", "xpath:idRelative"],
+        ["xpath=//lgn-password-input/c11n-input/input", "xpath:position"]
+      ],
+      "value": "${LOGIN[1]}"
+    }, {
+      "id": "2308bf41-8214-4af2-993d-3e969d53cf43",
+      "comment": "",
+      "command": "click",
+      "target": "id=username-password-form",
+      "targets": [
+        ["id=username-password-form", "id"],
+        ["name=username-password-form", "name"],
+        ["css=#username-password-form", "css:finder"],
+        ["xpath=//form[@id='username-password-form']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed98d22b-072e-497f-8c19-67d69438c798",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c11n-button__label",
+      "targets": [
+        ["css=.c11n-button__label", "css:finder"],
+        ["xpath=//button[@id='username-password-submit-btn']/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "886b306f-f72b-403a-a8d5-f7dd24151b9e",
       "comment": "",
       "command": "end",
       "target": "",
