@@ -14,6 +14,13 @@
       "targets": [],
       "value": "TICKER"
     }, {
+      "id": "80c0fb44-7e7e-4cbf-b440-eed87679acf1",
+      "comment": "",
+      "command": "store",
+      "target": "0",
+      "targets": [],
+      "value": "isExtendedHours"
+    }, {
       "id": "e43ad2b7-f9b0-4f3b-a8e1-44f2ead58779",
       "comment": "",
       "command": "executeScript",
@@ -95,6 +102,27 @@
       "comment": "",
       "command": "open",
       "target": "https://oltx.fidelity.com/ftgw/fbc/oftrade/stockInit?ignoreRedirect=Y&ORDER_TYPE=E&ACCOUNT=${account}&SYMBOL=${TICK}&PRICE_TYPE=L&ORDER_ACTION=B&QTY=${QUANT}&AMOUNT=111.03&SKIP_ORDER_PREVIEW=Y",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "880d8bb9-6a77-499b-8ddc-8f87e019782f",
+      "comment": "",
+      "command": "if",
+      "target": "${isExtendedHours} == 1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e3f330f4-88c7-4064-b6ee-2e5e0aa0ceb4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.eq-ticket_extendedhour_toggle-item",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "780b9003-360a-44da-9c75-a13f8eb4c990",
+      "comment": "",
+      "command": "end",
+      "target": "",
       "targets": [],
       "value": ""
     }, {
